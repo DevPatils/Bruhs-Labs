@@ -14,6 +14,7 @@ const Header = () => {
   const navRef = useRef(null);
   const itemRefs = useRef([]);
   const [indicator, setIndicator] = useState({ left: 0, width: 0, visible: false });
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     // place indicator under current route
@@ -47,15 +48,33 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-8 py-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-center">
-        {/* Logo - positioned absolutely on the left */}
-        <Link to="/" className="absolute left-8 flex items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-center relative">
+        {/* Logo - left */}
+        <Link to="/" className="absolute left-4 sm:left-8 flex items-center">
           <Logo />
         </Link>
 
-        {/* Navigation - centered */}
-        <nav ref={navRef} className="relative flex items-center bg-black/60 rounded-full px-3 py-2 border border-neutral-700/50 backdrop-blur-sm">
+        {/* Mobile menu button (visible on small screens) */}
+        <button
+          className="absolute right-4 sm:hidden p-2 rounded-md text-white z-40 border border-white/10 bg-black/30"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((s) => !s)}
+        >
+          {mobileOpen ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          )}
+        </button>
+
+        {/* Navigation - centered (desktop) */}
+        <nav ref={navRef} className="hidden md:flex relative items-center bg-black/60 rounded-full px-3 py-2 border border-neutral-700/50 backdrop-blur-sm">
           {/* indicator: moves under active nav item */}
             <span
               aria-hidden
@@ -71,7 +90,7 @@ const Header = () => {
               }}
             />
 
-          <div className="relative z-10 flex items-center space-x-12">
+          <div className="relative z-10 flex items-center space-x-6 md:space-x-12">
             {navItems.map((item, i) => (
               <Link
                 key={item.to}
@@ -85,6 +104,32 @@ const Header = () => {
             ))}
           </div>
         </nav>
+
+        {/* Mobile nav overlay */}
+        {/* Mobile menu panel: always rendered but animated via transform/opacity for drawer effect */}
+        <div
+          className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-3 md:hidden z-50 transition-all duration-300 ease-out ${
+            mobileOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
+        >
+          <div className="w-[92vw] max-w-sm mx-auto bg-black/70 backdrop-blur-md rounded-2xl border border-white/6 p-3 shadow-lg">
+            <nav className="flex flex-col gap-2">
+              {navItems.map((item, i) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => {
+                    placeIndicator(i);
+                    setMobileOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-3 rounded-lg text-white font-medium hover:bg-white/5"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
   );

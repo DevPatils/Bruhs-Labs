@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProjectCTA = ({ onClick }) => {
   return (
-    <div className="relative w-[261px] h-[81px] mx-auto">
-      {/* blurred decorative cluster behind button */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+    <div className="relative w-60 h-16 md:w-[261px] md:h-[81px] mx-auto">
+      {/* blurred decorative cluster behind button (hidden on small screens) */}
+      <div className="hidden sm:block absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
         <div style={{ position: 'absolute', left: 40, top: -60, width: 220.85, height: 480.47, filter: 'blur(83.68px)', opacity: 0.85 }} aria-hidden>
           <div style={{ position: 'absolute', width: 102.17, height: 194.13, left: 22, top: 174, background: '#AD0B07', borderRadius: 9999 }} />
           <div style={{ position: 'absolute', width: 102.17, height: 194.13, left: 26, top: -110, background: '#FDDE48', borderRadius: 9999, transform: 'rotate(-30deg)' }} />
@@ -18,22 +18,14 @@ const ProjectCTA = ({ onClick }) => {
       <button
         onClick={onClick}
         aria-label="Start Your Project"
-        className="relative z-10 flex items-center justify-center font-semibold"
+        className="relative z-10 flex items-center justify-center font-semibold text-sm md:text-lg px-6 w-full h-full"
         style={{
-          width: 261,
-          height: 81,
           borderRadius: 3733.11,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           background: 'linear-gradient(90deg, rgba(12,10,9,0.85) 0%, #FED408 45%, #C43E3B 100%)',
           color: '#fff',
-          fontSize: 18,
           letterSpacing: '0.2px',
           boxShadow: '0 10px 30px rgba(0,0,0,0.6), inset 0 6px 18px rgba(255,255,255,0.06)',
           border: '1px solid rgba(255,255,255,0.08)',
-          paddingLeft: 24,
-          paddingRight: 24,
           isolation: 'isolate'
         }}
       >

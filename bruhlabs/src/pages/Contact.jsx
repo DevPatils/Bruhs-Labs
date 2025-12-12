@@ -6,9 +6,9 @@ const Contact = () => {
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
       <Header />
 
-      {/* background glows */}
-      <div className="absolute -left-40 top-8 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 40%, #FDDE48 0%, rgba(253,222,72,0.45) 18%, rgba(253,222,72,0.12) 30%, rgba(0,0,0,0) 60%)', filter: 'blur(80px)', opacity: 0.95 }} />
-      <div className="absolute -right-36 bottom-12 w-[540px] h-[540px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 60%, #C74643 0%, rgba(199,70,67,0.45) 18%, rgba(199,70,67,0.12) 30%, rgba(0,0,0,0) 65%)', filter: 'blur(80px)', opacity: 0.9 }} />
+      {/* background glows (visible on mobile with smaller size) */}
+      <div className="absolute -left-20 top-6 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]" style={{ background: 'radial-gradient(circle at 30% 40%, #FDDE48 0%, rgba(253,222,72,0.45) 18%, rgba(253,222,72,0.12) 30%, rgba(0,0,0,0) 60%)', filter: 'blur(80px)', opacity: 0.95 }} />
+      <div className="absolute -right-12 bottom-8 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[540px] sm:h-[540px]" style={{ background: 'radial-gradient(circle at 70% 60%, #C74643 0%, rgba(199,70,67,0.45) 18%, rgba(199,70,67,0.12) 30%, rgba(0,0,0,0) 65%)', filter: 'blur(80px)', opacity: 0.9 }} />
 
       <main className="relative z-10 pt-28 pb-24 px-6 sm:px-10">
         <div className="max-w-3xl mx-auto text-center">

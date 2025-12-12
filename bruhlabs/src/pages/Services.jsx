@@ -35,7 +35,7 @@ const Services = () => {
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">Our Services</h1>
           <p className="text-lg text-gray-300 mb-10">We build products, communities and creative content that move brands forward.</p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 items-start justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 items-start justify-center">
             {services.map((s) => (
               <div key={s.title} className="flex justify-center">
                 <ServiceCard title={s.title} icon={s.icon} />

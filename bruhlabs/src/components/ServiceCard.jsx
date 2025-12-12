@@ -3,8 +3,6 @@ import React from 'react';
 const ServiceCard = ({ title, icon }) => {
   const boxStyle = {
     position: 'relative',
-    width: '164px',
-    height: '164px',
     background: 'rgba(19, 16, 2, 0.1)',
     boxShadow:
       'inset 0px 6px 12px #FFFFFF, inset 0px 15px 48px #FDDE48, inset 0px 36px 48px #C74643, inset 0px 96px 120px #000000',
@@ -34,16 +32,16 @@ const ServiceCard = ({ title, icon }) => {
   };
 
   return (
-    <div style={boxStyle} aria-hidden={false}>
+    <div style={boxStyle} className="relative w-40 h-40 md:w-[164px] md:h-[164px]" aria-hidden={false}>
       {/* Paint palette: absolute 94x94 background image placed at left:35px top:19px. It sits behind the title. */}
       {icon && (
         <div
           style={{
             position: 'absolute',
-            left: 40,
-            top: 22,
-            width: 76,
-            height: 76,
+            left: 22,
+            top: 14,
+            width: 56,
+            height: 56,
             backgroundImage: `url(${icon})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -56,8 +54,8 @@ const ServiceCard = ({ title, icon }) => {
       )}
 
       {/* Title placed at the bottom to avoid overlapping the palette/icon */}
-      <div style={{ position: 'absolute', bottom: 16, left: 0, right: 0, zIndex: 20, textAlign: 'center', padding: '0 12px' }}>
-        <div style={{ fontSize: 14, fontWeight: 600, textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{title}</div>
+      <div className="absolute bottom-3 left-0 right-0 z-20 text-center px-3">
+        <div className="text-sm md:text-base font-semibold" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{title}</div>
       </div>
     </div>
   );
