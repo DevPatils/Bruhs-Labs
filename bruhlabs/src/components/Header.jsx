@@ -1,34 +1,57 @@
-import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import Logo from './Logo';
 
 const navItems = [
-  { to: '/', label: 'Home' },
-  { to: '/services', label: 'Our Services' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
+  { to: '#home', label: 'Home' },
+  { to: '#services', label: 'Our Services' },
+  { to: '#about', label: 'About' },
+  { to: '#contact', label: 'Contact' },
 ];
 
 const Header = () => {
-  const location = useLocation();
   const navRef = useRef(null);
   const itemRefs = useRef([]);
   const [indicator, setIndicator] = useState({ left: 0, width: 0, visible: false });
+  const [activeSection, setActiveSection] = useState('home');
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    // place indicator under current route
-    const idx = Math.max(0, navItems.findIndex((i) => i.to === location.pathname));
+    // place indicator under active section
+    const idx = Math.max(0, navItems.findIndex((i) => i.to === `#${activeSection}`));
     placeIndicator(idx);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, [activeSection]);
 
   useEffect(() => {
-    // initial placement after mount
-    const idx = Math.max(0, navItems.findIndex((i) => i.to === location.pathname));
-    const raf = requestAnimationFrame(() => placeIndicator(idx));
+    // initial placement
+    const raf = requestAnimationFrame(() => placeIndicator(0));
     return () => cancelAnimationFrame(raf);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    // observe which section is in view
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -66%',
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   function placeIndicator(index) {
@@ -38,22 +61,28 @@ const Header = () => {
       setIndicator((s) => ({ ...s, visible: false }));
       return;
     }
-      const navRect = navEl.getBoundingClientRect();
-      const rect = el.getBoundingClientRect();
-      // make Home slightly wider so the gold band looks balanced on the first item
-      const extra = index === 0 ? 44 : 12;
-      const width = Math.max(24, rect.width - 12 + extra);
-      const left = rect.left - navRect.left + 6 - Math.round(extra / 2);
+    const navRect = navEl.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+    const extra = index === 0 ? 44 : 12;
+    const width = Math.max(24, rect.width - 12 + extra);
+    const left = rect.left - navRect.left + 6 - Math.round(extra / 2);
     setIndicator({ left, width, visible: true });
   }
+
+  const scrollToSection = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-center relative">
         {/* Logo - left */}
-        <Link to="/" className="absolute left-4 sm:left-8 flex items-center">
+        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }} className="absolute left-4 sm:left-8 flex items-center cursor-pointer">
           <Logo />
-        </Link>
+        </a>
 
         {/* Mobile menu button (visible on small screens) */}
         <button
@@ -92,15 +121,19 @@ const Header = () => {
 
           <div className="relative z-10 flex items-center space-x-6 md:space-x-12">
             {navItems.map((item, i) => (
-              <Link
+              <a
                 key={item.to}
-                to={item.to}
+                href={item.to}
                 ref={(el) => (itemRefs.current[i] = el)}
-                onClick={() => placeIndicator(i)}
-                className={`px-6 py-2.5 rounded-full text-white font-medium transition-colors`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.to);
+                  placeIndicator(i);
+                }}
+                className={`px-6 py-2.5 rounded-full text-white font-medium transition-colors cursor-pointer`}
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </div>
         </nav>
@@ -115,17 +148,19 @@ const Header = () => {
           <div className="w-[92vw] max-w-sm mx-auto bg-black/70 backdrop-blur-md rounded-2xl border border-white/6 p-3 shadow-lg">
             <nav className="flex flex-col gap-2">
               {navItems.map((item, i) => (
-                <Link
+                <a
                   key={item.to}
-                  to={item.to}
-                  onClick={() => {
+                  href={item.to}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.to);
                     placeIndicator(i);
                     setMobileOpen(false);
                   }}
-                  className="block w-full text-left px-4 py-3 rounded-lg text-white font-medium hover:bg-white/5"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-white font-medium hover:bg-white/5 cursor-pointer"
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
             </nav>
           </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import ProjectCTA from './ProjectCTA';
+import squareImg from '../assets/squre.png';
+import triangleImg from '../assets/triangle\'.png';
 
 const Hero = () => {
   return (
@@ -24,44 +26,28 @@ const Hero = () => {
         }}
       />
 
-      {/* 3D Shapes */}
-      {/* Yellow/Gold Cube Shape - Left */}
-      <div className="hidden md:block absolute left-[5%] bottom-[15%] w-64 h-80 opacity-90">
-        <div className="relative w-full h-full">
-          {/* Front face */}
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 transform rotate-[-15deg] skew-y-6"></div>
-          {/* Side face */}
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 transform translate-x-8 translate-y-4 rotate-[-15deg] skew-y-6 opacity-80"></div>
-          {/* Top face */}
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 transform -translate-y-8 translate-x-4 rotate-[-15deg] skew-x-12 opacity-70"></div>
-        </div>
+      {/* Decorative shape images positioned as per Figma */}
+      {/* Yellow/Gold Square - Bottom Left within frame */}
+      <div className="hidden md:block absolute left-[16.3%] bottom-[-15%] w-[604px] h-[604px] opacity-95 ]">
+        <img src={squareImg} alt="" className="w-full h-full object-contain" />
       </div>
 
-      {/* Pink/Red Pyramid Shape - Right */}
-      <div className="hidden md:block absolute right-[8%] bottom-[15%] w-64 h-64 opacity-80">
-        <div className="relative w-full h-full">
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[130px] border-l-transparent border-r-[130px] border-r-transparent border-b-[220px] border-b-gradient-to-t from-pink-500 via-red-400 to-red-300" 
-               style={{
-                 borderBottomColor: '#f472b6',
-                 filter: 'drop-shadow(0 0 40px rgba(244, 114, 182, 0.3))'
-               }}>
-          </div>
-        </div>
+      {/* Pink/Red Triangle - Bottom Right within frame */}
+      <div className="hidden md:block absolute right-[16%] bottom-[-10%] w-[532px] h-[532px] opacity-90">
+        <img src={triangleImg} alt="" className="w-full h-full object-contain" />
       </div>
 
-      {/* Mobile-only decorative shapes (small square + triangle) - visible on phones */}
+      {/* Mobile-only decorative shapes - using actual images at smaller sizes */}
       <div className="block sm:hidden">
-        {/* small rotated square (left) */}
-        <div className="absolute left-4 bottom-36 w-24 h-24 rounded-md" style={{ background: 'linear-gradient(180deg, rgba(253,222,72,0.95), rgba(199,70,67,0.85))', transform: 'rotate(-12deg)', filter: 'blur(6px)', opacity: 0.95 }} aria-hidden />
+        {/* small square (left) */}
+        <div className="absolute left-6 bottom-32 w-[180px] h-[180px] top-[-40%]">
+          <img src={squareImg} alt="" className="w-full h-full object-contain opacity-95 " />
+        </div>
 
         {/* small triangle (right) */}
-        <div className="absolute right-6 bottom-40 w-0 h-0" style={{ borderLeft: '36px solid transparent', borderRight: '36px solid transparent', borderBottom: '64px solid rgba(199,70,67,0.9)', filter: 'blur(4px)', opacity: 0.95 }} aria-hidden />
-      </div>
-
-      {/* Mobile top decorative shapes (above text) */}
-      <div className="block sm:hidden">
-        <div className="absolute left-4 top-24 w-20 h-20 rounded-full" style={{ background: 'radial-gradient(circle, rgba(253,222,72,0.95), rgba(253,222,72,0.6))', filter: 'blur(10px)', opacity: 0.9 }} aria-hidden />
-        <div className="absolute right-4 top-20 w-16 h-16 rounded-md" style={{ background: 'linear-gradient(180deg, rgba(199,70,67,0.9), rgba(199,70,67,0.6))', transform: 'rotate(12deg)', filter: 'blur(6px)', opacity: 0.9 }} aria-hidden />
+        <div className="absolute right-6 bottom-32 w-36 h-36">
+          <img src={triangleImg} alt="" className="w-full h-full object-contain opacity-95" />
+        </div>
       </div>
 
       {/* Content */}
