@@ -33,13 +33,14 @@ const ServiceCard = ({ title, icon }) => {
 
   return (
     <div style={boxStyle} className="relative w-40 h-40 md:w-[164px] md:h-[164px]" aria-hidden={false}>
-      {/* Paint palette: absolute 94x94 background image placed at left:35px top:19px. It sits behind the title. */}
+      {/* Paint palette: centered background image with reduced opacity */}
       {icon && (
         <div
           style={{
             position: 'absolute',
-            left: 22,
-            top: 14,
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
             width: 56,
             height: 56,
             backgroundImage: `url(${icon})`,
@@ -47,7 +48,7 @@ const ServiceCard = ({ title, icon }) => {
             backgroundPosition: 'center',
             borderRadius: 12,
             zIndex: 8,
-            opacity: 0.98,
+            opacity: 0.4,
             pointerEvents: 'none'
           }}
         />
