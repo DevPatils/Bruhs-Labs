@@ -14,8 +14,11 @@ const ProjectCTA = ({ onClick }) => {
         </div>
       </div>
 
-      {/* pill button */}
-      <button
+      {/* pill link to Typeform */}
+      <a
+        href="https://form.typeform.com/to/MsbFnO5O"
+        target="_blank"
+        rel="noopener noreferrer"
         onClick={onClick}
         aria-label="Start Your Project"
         className="relative z-10 flex items-center justify-center font-semibold text-sm md:text-lg px-6 w-full h-full"
@@ -36,7 +39,7 @@ const ProjectCTA = ({ onClick }) => {
         <span style={{ position: 'absolute', inset: 0, borderRadius: 3733.11, background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0) 60%)', pointerEvents: 'none', zIndex: 2 }} />
 
         <span style={{ position: 'relative', zIndex: 3 }}>Start Your Project</span>
-      </button>
+      </a>
     </div>
   );
 };

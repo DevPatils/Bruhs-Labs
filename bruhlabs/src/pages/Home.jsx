@@ -13,6 +13,8 @@ import communityIcon from '../assets/communitymanagement.png';
 import productMgmtIcon from '../assets/productmanagement.png';
 import advisoryIcon from '../assets/advisory.png';
 import devsupportIcon from '../assets/devsupport.png';
+import cofounder1 from '../assets/cofounder1.png';
+import cofounder2 from '../assets/cofounder2.png';
 
 const services = [
   { title: 'Art & Design', icon: artIcon },
@@ -58,8 +60,8 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative bg-black text-white overflow-hidden">
-        <div className="max-w-[1920px] mx-auto relative">
+      <section id="about" className="relative bg-black text-white overflow-hidden mt-[5%]">
+        <div className="max-w-[1920px] mx-auto relative h-full">
           {/* Left yellow glow */}
           <div
             className="absolute -left-20 top-6 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]"
@@ -80,12 +82,12 @@ const Home = () => {
             }}
           />
 
-          <main className="relative z-10 pt-28 pb-20 px-6 sm:px-10">
+          <main className="relative z-10 h-[calc(100vh-88px)] flex flex-col justify-between pt-8 pb-8 px-6 sm:px-10">
             <div className="max-w-4xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">About</h1>
 
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                <span className="text-yellow-400 font-semibold">Bruhs Labs</span> is a full-spectrum Web3 agency providing comprehensive blockchain services and solutions for projects across the ecosystem. We help founders, protocols, and brands navigate the decentralized landscape with clear strategies and reliable execution.
+                <span className="text-yellow-400 font-semibold">Bruhs Labs</span> is a full-spectrum <span className="text-yellow-400 font-semibold">Web3</span> agency providing comprehensive blockchain services and solutions for projects across the ecosystem. We help founders, protocols, and brands navigate the decentralized landscape with clear strategies and reliable execution.
               </p>
 
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
@@ -96,11 +98,50 @@ const Home = () => {
                 At Bruhs Labs, we bring together technology, strategy, and creativity to deliver meaningful impact in the evolving world of Web3.
               </p>
             </div>
+
+            {/* Cofounders inline so About fits one viewport */}
+            <div className="w-full">
+              <div className="max-w-4xl mx-auto px-6 sm:px-0">
+                <h2 className="text-3xl font-bold mb-6">Meet the Cofounders</h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="h-72 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
+                        <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative">
+                          <img src={cofounder1} alt="GYPSY" className="max-w-[72%] max-h-[72%] object-contain" />
+                          <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white text-center py-1">
+                            <div className="font-semibold text-sm">GYPSY</div>
+                            <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="text-xs text-yellow-300 inline-block">@bruhgypsy</a>
+                          </div>
+                        </div>
+                        <div className="mt-3">
+                          <div className="font-semibold text-xl text-white">GYPSY</div>
+                          <div className="text-sm text-yellow-300">@bruhgypsy</div>
+                          <div className="text-sm text-gray-300 mt-2">Design & product specialist.</div>
+                        </div>
+                      </div>
+
+                  <div className="h-72 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
+                    <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative">
+                      <img src={cofounder2} alt="Messi boi" className="max-w-[72%] max-h-[72%] object-contain" />
+                      <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white text-center py-1">
+                        <div className="font-semibold text-sm">Messi boi</div>
+                        <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="text-xs text-yellow-300 inline-block">@messi_boii</a>
+                      </div>
+                    </div>
+                    <div className="mt-3">
+                      <div className="font-semibold text-xl text-white">Messi boi</div>
+                      <div className="text-sm text-yellow-300">@messi_boii</div>
+                      <div className="text-sm text-gray-300 mt-2">Growth and community lead.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section */} 
       <section id="contact" className="relative bg-black text-white overflow-hidden">
         {/* background glows */}
         <div className="absolute -left-20 top-6 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]" style={{ background: 'radial-gradient(circle at 30% 40%, #FDDE48 0%, rgba(253,222,72,0.45) 18%, rgba(253,222,72,0.12) 30%, rgba(0,0,0,0) 60%)', filter: 'blur(80px)', opacity: 0.95 }} />
@@ -114,7 +155,7 @@ const Home = () => {
 
             <div className="mb-8">
               <div className="text-sm text-gray-400 mb-2">Get in touch:</div>
-              <div className="text-base text-white font-medium">Typeform: [Contact Form Button]</div>
+              
               <div className="text-base text-white font-medium">Email: hello@bruhslabs.com</div>
             </div>
 
@@ -129,7 +170,7 @@ const Home = () => {
           <div className="max-w-7xl mx-auto px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-sm text-gray-100">© 2025 Bruhs Labs — Crafted with ♥ in Web3.</div>
             <div className="flex items-center gap-3">
-              <a href="#" className="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://x.com/bruhslabs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
                 <span className="text-white font-bold text-sm">X</span>
               </a>
               <a href="#" className="w-10 h-10 bg-[#0077B5] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">

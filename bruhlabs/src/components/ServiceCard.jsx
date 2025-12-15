@@ -56,7 +56,7 @@ const ServiceCard = ({ title, icon }) => {
 
       {/* Title placed at the bottom to avoid overlapping the palette/icon */}
       <div className="absolute bottom-3 left-0 right-0 z-20 text-center px-3">
-        <div className="text-sm md:text-base font-semibold" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{title}</div>
+        <div className="text-xs md:text-sm font-semibold opacity-80" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{title}</div>
       </div>
     </div>
   );
