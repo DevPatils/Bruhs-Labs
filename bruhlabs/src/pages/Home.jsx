@@ -102,35 +102,31 @@ const Home = () => {
             {/* Cofounders inline so About fits one viewport */}
             <div className="w-full">
               <div className="max-w-4xl mx-auto px-6 sm:px-0">
-                <h2 className="text-3xl font-bold mb-6">Meet the Cofounders</h2>
+                <h2 className="text-2xl font-bold mb-6">Meet the Co-founders</h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="h-72 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
-                        <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative">
-                          <img src={cofounder1} alt="GYPSY" className="max-w-[72%] max-h-[72%] object-contain" />
-                          <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white text-center py-1">
-                            <div className="font-semibold text-sm">GYPSY</div>
-                            <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="text-xs text-yellow-300 inline-block">@bruhgypsy</a>
+                <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6">
+                  <div className="h-80 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
+                        <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="block">
+                          <div className="w-56 h-56 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                            <img src={cofounder1} alt="GYPSY" className="max-w-[95%] max-h-[95%] object-contain" />
                           </div>
-                        </div>
+                        </a>
                         <div className="mt-3">
                           <div className="font-semibold text-xl text-white">GYPSY</div>
-                          <div className="text-sm text-yellow-300">@bruhgypsy</div>
+                          <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="text-sm text-yellow-300 hover:underline">@bruhgypsy</a>
                           <div className="text-sm text-gray-300 mt-2">Design & product specialist.</div>
                         </div>
                       </div>
-
-                  <div className="h-72 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
-                    <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative">
-                      <img src={cofounder2} alt="Messi boi" className="max-w-[72%] max-h-[72%] object-contain" />
-                      <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white text-center py-1">
-                        <div className="font-semibold text-sm">Messi boi</div>
-                        <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="text-xs text-yellow-300 inline-block">@messi_boii</a>
+                      
+                  <div className="h-80 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
+                    <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="block">
+                      <div className="w-56 h-56 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                        <img src={cofounder2} alt="Messi boi" className="max-w-[95%] max-h-[95%] object-contain" />
                       </div>
-                    </div>
+                    </a>
                     <div className="mt-3">
                       <div className="font-semibold text-xl text-white">Messi boi</div>
-                      <div className="text-sm text-yellow-300">@messi_boii</div>
+                      <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="text-sm text-yellow-300 hover:underline">@messi_boii</a>
                       <div className="text-sm text-gray-300 mt-2">Growth and community lead.</div>
                     </div>
                   </div>
