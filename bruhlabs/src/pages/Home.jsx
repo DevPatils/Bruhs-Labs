@@ -61,7 +61,7 @@ const Home = () => {
 
       {/* About Section */}
       <section id="about" className="relative bg-black text-white overflow-hidden mt-[5%]">
-        <div className="max-w-[1920px] mx-auto relative h-full">
+        <div className="max-w-[1920px] mx-auto relative">
           {/* Left yellow glow */}
           <div
             className="absolute -left-20 top-6 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]"
@@ -82,53 +82,67 @@ const Home = () => {
             }}
           />
 
-          <main className="relative z-10 h-[calc(100vh-88px)] flex flex-col justify-between pt-8 pb-8 px-6 sm:px-10">
+          <main className="relative z-10 pt-20 pb-16 px-6 sm:px-10">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">About</h1>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4">About</h1>
 
-              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              <p className="text-sm text-gray-300 mb-3 leading-relaxed">
                 <span className="text-yellow-400 font-semibold">Bruhs Labs</span> is a full-spectrum <span className="text-yellow-400 font-semibold">Web3</span> agency providing comprehensive blockchain services and solutions for projects across the ecosystem. We help founders, protocols, and brands navigate the decentralized landscape with clear strategies and reliable execution.
               </p>
 
-              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              <p className="text-sm text-gray-300 mb-3 leading-relaxed">
                 Our expertise covers smart contract development, NFT and token launches, decentralized application design, marketing and community growth, and strategic partnerships. Each engagement is driven by precision, transparency, and a commitment to long-term project success.
               </p>
 
-              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              <p className="text-sm text-gray-300 mb-8 leading-relaxed">
                 At Bruhs Labs, we bring together technology, strategy, and creativity to deliver meaningful impact in the evolving world of Web3.
               </p>
             </div>
 
-            {/* Cofounders inline so About fits one viewport */}
-            <div className="w-full">
-              <div className="max-w-4xl mx-auto px-6 sm:px-0">
-                <h2 className="text-2xl font-bold mb-6">Meet the Co-founders</h2>
+            {/* Cofounders Section */}
+            <div className="max-w-4xl mx-auto mt-6 mb-6">
+              <h2 className="text-2xl font-bold mb-8 text-center">Meet the Co-founders</h2>
 
-                <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6">
-                  <div className="h-80 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
-                        <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="block">
-                          <div className="w-56 h-56 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
-                            <img src={cofounder1} alt="GYPSY" className="max-w-[95%] max-h-[95%] object-contain" />
-                          </div>
-                        </a>
-                        <div className="mt-3">
-                          <div className="font-semibold text-xl text-white">GYPSY</div>
-                          <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="text-sm text-yellow-300 hover:underline">@bruhgypsy</a>
-                          <div className="text-sm text-gray-300 mt-2">Design & product specialist.</div>
-                        </div>
-                      </div>
-                      
-                  <div className="h-80 bg-transparent rounded-md flex flex-col items-center justify-center gap-4 p-6 text-center">
-                    <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="block">
-                      <div className="w-56 h-56 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
-                        <img src={cofounder2} alt="Messi boi" className="max-w-[95%] max-h-[95%] object-contain" />
-                      </div>
-                    </a>
-                    <div className="mt-3">
-                      <div className="font-semibold text-xl text-white">Messi boi</div>
-                      <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="text-sm text-yellow-300 hover:underline">@messi_boii</a>
-                      <div className="text-sm text-gray-300 mt-2">Growth and community lead.</div>
+              <div className="flex flex-col sm:flex-row justify-center items-start gap-12">
+                {/* GYPSY Card */}
+                <div className="flex flex-col items-center text-center w-full sm:w-auto">
+                  <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="block mb-3">
+                    <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                      <img src={cofounder1} alt="GYPSY" className="max-w-[95%] max-h-[95%] object-contain" />
                     </div>
+                  </a>
+                  <div className="space-y-1">
+                    <div className="font-bold text-lg text-white">GYPSY</div>
+                    <a 
+                      href="https://x.com/bruhgypsy" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="block text-sm text-yellow-400 hover:text-yellow-300 hover:underline transition-colors"
+                    >
+                      @bruhgypsy
+                    </a>
+                    <div className="text-xs text-gray-300">Design & product specialist.</div>
+                  </div>
+                </div>
+                      
+                {/* Messi boi Card */}
+                <div className="flex flex-col items-center text-center w-full sm:w-auto">
+                  <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="block mb-3">
+                    <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                      <img src={cofounder2} alt="Messi boi" className="max-w-[95%] max-h-[95%] object-contain" />
+                    </div>
+                  </a>
+                  <div className="space-y-1">
+                    <div className="font-bold text-lg text-white">Messi boi</div>
+                    <a 
+                      href="https://x.com/messi_boii" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="block text-sm text-yellow-400 hover:text-yellow-300 hover:underline transition-colors"
+                    >
+                      @messi_boii
+                    </a>
+                    <div className="text-xs text-gray-300">Growth and community lead.</div>
                   </div>
                 </div>
               </div>
