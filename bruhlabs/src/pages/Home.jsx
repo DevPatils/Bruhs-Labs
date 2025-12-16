@@ -34,20 +34,24 @@ const Home = () => {
     <div className="min-h-screen bg-black">
       <Header />
       
-      {/* Hero Section */}
-      <section id="home">
+      {/* Hero Section - Full viewport */}
+      <section id="home" className="h-screen">
         <Hero />
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="relative bg-black text-white">
-        <main className="pt-28 pb-20 px-6 sm:px-10">
-          <div className="max-w-[1920px] mx-auto">
-            <div className="max-w-7xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-              <p className="text-lg text-gray-300 mb-10">We build products, communities and creative content that move brands forward.</p>
+      {/* Services Section - Full viewport */}
+      <section id="services" className="relative bg-black text-white h-screen flex items-center overflow-hidden">
+        <main className="w-full px-[3vw] py-[2vh]">
+          <div className="max-w-[1920px] mx-auto h-full flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto w-full">
+              <h1 className="font-bold mb-[2vh]" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)' }}>
+                Our Services
+              </h1>
+              <p className="text-gray-300 mb-[3vh]" style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)' }}>
+                We build products, communities and creative content that move brands forward.
+              </p>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-12 items-start justify-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[2vw] items-start justify-center">
                 {services.map((s) => (
                   <div key={s.title} className="flex justify-center">
                     <ServiceCard title={s.title} icon={s.icon} />
@@ -59,9 +63,9 @@ const Home = () => {
         </main>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="relative bg-black text-white overflow-hidden mt-[5%]">
-        <div className="max-w-[1920px] mx-auto relative">
+      {/* About Section - Full viewport */}
+      <section id="about" className="relative bg-black text-white overflow-hidden h-screen flex items-center">
+        <div className="max-w-[1920px] mx-auto relative w-full h-full">
           {/* Left yellow glow */}
           <div
             className="absolute -left-20 top-6 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]"
@@ -74,7 +78,7 @@ const Home = () => {
 
           {/* Right red glow */}
           <div
-            className="absolute -right-12 bottom-8 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[540px] sm:h-[540px]"
+            className="absolute -right-12 bottom-8 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]"
             style={{
               background: 'radial-gradient(circle at 70% 60%, #C74643 0%, rgba(199,70,67,0.45) 18%, rgba(199,70,67,0.12) 30%, rgba(0,0,0,0) 65%)',
               filter: 'blur(80px)',
@@ -82,67 +86,95 @@ const Home = () => {
             }}
           />
 
-          <main className="relative z-10 pt-20 pb-16 px-6 sm:px-10">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4">About</h1>
+          <main className="relative z-10 px-[3vw] h-full flex flex-col justify-center py-[4vh]">
+            <div className="max-w-4xl mx-auto w-full">
+              <h1 className="font-bold mb-[1.5vh]" style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)' }}>
+                About
+              </h1>
 
-              <p className="text-sm text-gray-300 mb-3 leading-relaxed">
-                <span className="text-yellow-400 font-semibold">Bruhs Labs</span> is a full-spectrum <span className="text-yellow-400 font-semibold">Web3</span> agency providing comprehensive blockchain services and solutions for projects across the ecosystem. We help founders, protocols, and brands navigate the decentralized landscape with clear strategies and reliable execution.
-              </p>
+              <div className="space-y-[1vh]" style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.875rem)' }}>
+                <p className="text-gray-300 leading-relaxed">
+                  <span className="text-yellow-400 font-semibold">Bruhs Labs</span> is a full-spectrum <span className="text-yellow-400 font-semibold">Web3</span> agency providing comprehensive blockchain services and solutions for projects across the ecosystem. We help founders, protocols, and brands navigate the decentralized landscape with clear strategies and reliable execution.
+                </p>
 
-              <p className="text-sm text-gray-300 mb-3 leading-relaxed">
-                Our expertise covers smart contract development, NFT and token launches, decentralized application design, marketing and community growth, and strategic partnerships. Each engagement is driven by precision, transparency, and a commitment to long-term project success.
-              </p>
+                <p className="text-gray-300 leading-relaxed">
+                  Our expertise covers smart contract development, NFT and token launches, decentralized application design, marketing and community growth, and strategic partnerships. Each engagement is driven by precision, transparency, and a commitment to long-term project success.
+                </p>
 
-              <p className="text-sm text-gray-300 mb-8 leading-relaxed">
-                At Bruhs Labs, we bring together technology, strategy, and creativity to deliver meaningful impact in the evolving world of Web3.
-              </p>
+                <p className="text-gray-300 leading-relaxed">
+                  At Bruhs Labs, we bring together technology, strategy, and creativity to deliver meaningful impact in the evolving world of Web3.
+                </p>
+              </div>
             </div>
 
             {/* Cofounders Section */}
-            <div className="max-w-4xl mx-auto mt-6 mb-6">
-              <h2 className="text-2xl font-bold mb-8 text-center">Meet the Co-founders</h2>
+            <div className="max-w-4xl mx-auto mt-[3vh] w-full">
+              <h2 className="font-bold mb-[2vh] text-center" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>
+                Meet the Co-founders
+              </h2>
 
-              <div className="flex flex-col sm:flex-row justify-center items-start gap-12">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-[4vw]">
                 {/* GYPSY Card */}
-                <div className="flex flex-col items-center text-center w-full sm:w-auto">
-                  <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="block mb-3">
-                    <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                <div className="flex flex-col items-center text-center">
+                  <a href="https://x.com/bruhgypsy" target="_blank" rel="noopener noreferrer" className="block mb-[1vh]">
+                    <div 
+                      className="bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity"
+                      style={{ 
+                        width: 'clamp(10rem, 15vw, 12rem)', 
+                        height: 'clamp(10rem, 15vw, 12rem)' 
+                      }}
+                    >
                       <img src={cofounder1} alt="GYPSY" className="max-w-[95%] max-h-[95%] object-contain" />
                     </div>
                   </a>
-                  <div className="space-y-1">
-                    <div className="font-bold text-lg text-white">GYPSY</div>
+                  <div className="space-y-[0.5vh]">
+                    <div className="font-bold text-white" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)' }}>
+                      GYPSY
+                    </div>
                     <a 
                       href="https://x.com/bruhgypsy" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="block text-sm text-yellow-400 hover:text-yellow-300 hover:underline transition-colors"
+                      className="block text-yellow-400 hover:text-yellow-300 hover:underline transition-colors"
+                      style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.875rem)' }}
                     >
                       @bruhgypsy
                     </a>
-                    <div className="text-xs text-gray-300">Design & product specialist.</div>
+                    <div className="text-gray-300" style={{ fontSize: 'clamp(0.75rem, 1vw, 0.75rem)' }}>
+                      Design & product specialist.
+                    </div>
                   </div>
                 </div>
                       
                 {/* Messi boi Card */}
-                <div className="flex flex-col items-center text-center w-full sm:w-auto">
-                  <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="block mb-3">
-                    <div className="w-48 h-48 bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                <div className="flex flex-col items-center text-center">
+                  <a href="https://x.com/messi_boii" target="_blank" rel="noopener noreferrer" className="block mb-[1vh]">
+                    <div 
+                      className="bg-[#0f0f0f] rounded-md flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity"
+                      style={{ 
+                        width: 'clamp(10rem, 15vw, 12rem)', 
+                        height: 'clamp(10rem, 15vw, 12rem)' 
+                      }}
+                    >
                       <img src={cofounder2} alt="Messi boi" className="max-w-[95%] max-h-[95%] object-contain" />
                     </div>
                   </a>
-                  <div className="space-y-1">
-                    <div className="font-bold text-lg text-white">Messi boi</div>
+                  <div className="space-y-[0.5vh]">
+                    <div className="font-bold text-white" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)' }}>
+                      Messi boi
+                    </div>
                     <a 
                       href="https://x.com/messi_boii" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="block text-sm text-yellow-400 hover:text-yellow-300 hover:underline transition-colors"
+                      className="block text-yellow-400 hover:text-yellow-300 hover:underline transition-colors"
+                      style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.875rem)' }}
                     >
                       @messi_boii
                     </a>
-                    <div className="text-xs text-gray-300">Growth and community lead.</div>
+                    <div className="text-gray-300" style={{ fontSize: 'clamp(0.75rem, 1vw, 0.75rem)' }}>
+                      Growth and community lead.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -151,50 +183,75 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */} 
-      <section id="contact" className="relative bg-black text-white overflow-hidden">
+      {/* Contact Section - Full viewport */}
+      <section id="contact" className="relative bg-black text-white overflow-hidden h-screen flex items-center">
         {/* background glows */}
         <div className="absolute -left-20 top-6 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]" style={{ background: 'radial-gradient(circle at 30% 40%, #FDDE48 0%, rgba(253,222,72,0.45) 18%, rgba(253,222,72,0.12) 30%, rgba(0,0,0,0) 60%)', filter: 'blur(80px)', opacity: 0.95 }} />
-        <div className="absolute -right-12 bottom-8 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[540px] sm:h-[540px]" style={{ background: 'radial-gradient(circle at 70% 60%, #C74643 0%, rgba(199,70,67,0.45) 18%, rgba(199,70,67,0.12) 30%, rgba(0,0,0,0) 65%)', filter: 'blur(80px)', opacity: 0.9 }} />
+        <div className="absolute -right-12 bottom-8 w-[300px] h-[300px] rounded-full pointer-events-none sm:w-[520px] sm:h-[520px]" style={{ background: 'radial-gradient(circle at 70% 60%, #C74643 0%, rgba(199,70,67,0.45) 18%, rgba(199,70,67,0.12) 30%, rgba(0,0,0,0) 65%)', filter: 'blur(80px)', opacity: 0.9 }} />
 
-        <main className="relative z-10 pt-28 pb-24 px-6 sm:px-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-xl sm:text-2xl text-gray-200 mb-8 leading-relaxed">Whether you're preparing to launch a new project, expand your ecosystem, or explore strategic collaborations, our team is ready to support you every step of the way.</p>
+        <main className="relative z-10 w-full px-[3vw] h-full flex flex-col justify-center">
+          <div className="max-w-3xl mx-auto text-center flex-1 flex flex-col justify-center">
+            <p 
+              className="text-gray-200 mb-[2vh] leading-relaxed"
+              style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}
+            >
+              Whether you're preparing to launch a new project, expand your ecosystem, or explore strategic collaborations, our team is ready to support you every step of the way.
+            </p>
 
-            <p className="text-lg text-gray-300 mb-10">Reach out through the contact form or email us directly, and we'll get back to you shortly.</p>
+            <p 
+              className="text-gray-300 mb-[3vh]"
+              style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)' }}
+            >
+              Reach out through the contact form or email us directly, and we'll get back to you shortly.
+            </p>
 
-            <div className="mb-8">
-              <div className="text-sm text-gray-400 mb-2">Get in touch:</div>
+            <div className="mb-[3vh]">
+              <div 
+                className="text-gray-400 mb-[1vh]"
+                style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.875rem)' }}
+              >
+                Get in touch:
+              </div>
               
-              <div className="text-base text-white font-medium">Email: hello@bruhslabs.com</div>
+              <div 
+                className="text-white font-medium"
+                style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}
+              >
+                Email: hello@bruhslabs.com
+              </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-[4vh]">
               <ProjectCTA />
             </div>
           </div>
-        </main>
 
-        {/* footer */}
-        <footer className="relative z-10 mt-12 bg-[#3d2d2d] border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-gray-100">© 2025 Bruhs Labs — Crafted with ♥ in Web3.</div>
-            <div className="flex items-center gap-3">
-              <a href="https://x.com/bruhslabs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                <span className="text-white font-bold text-sm">X</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-[#0077B5] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                <span className="text-white font-bold text-sm">in</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-[#EA4C89] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                <span className="text-white font-bold text-sm">dr</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-[#1769FF] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                <span className="text-white font-bold text-sm">Be</span>
-              </a>
+          {/* footer */}
+          <footer className="border-t border-white/10 pt-[2vh]">
+            <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-[2vh]">
+              <div 
+                className="text-gray-100"
+                style={{ fontSize: 'clamp(0.75rem, 1vw, 0.875rem)' }}
+              >
+                © 2025 Bruhs Labs — Crafted with ♥ in Web3.
+              </div>
+              <div className="flex items-center gap-3">
+                <a href="https://x.com/bruhslabs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                  <span className="text-white font-bold text-sm">X</span>
+                </a>
+                <a href="#" className="w-10 h-10 bg-[#0077B5] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                  <span className="text-white font-bold text-sm">in</span>
+                </a>
+                <a href="#" className="w-10 h-10 bg-[#EA4C89] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                  <span className="text-white font-bold text-sm">dr</span>
+                </a>
+                <a href="#" className="w-10 h-10 bg-[#1769FF] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                  <span className="text-white font-bold text-sm">Be</span>
+                </a>
+              </div>
             </div>
-          </div>
-        </footer>
+          </footer>
+        </main>
       </section>
     </div>
   );
