@@ -140,9 +140,7 @@ const Home = () => {
                     >
                       @bruhgypsy
                     </a>
-                    <div className="text-gray-300" style={{ fontSize: 'clamp(0.75rem, 1vw, 0.75rem)' }}>
-                      Design & product specialist.
-                    </div>
+
                   </div>
                 </div>
                       
@@ -172,9 +170,7 @@ const Home = () => {
                     >
                       @messi_boii
                     </a>
-                    <div className="text-gray-300" style={{ fontSize: 'clamp(0.75rem, 1vw, 0.75rem)' }}>
-                      Growth and community lead.
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -227,8 +223,8 @@ const Home = () => {
           </div>
 
           {/* footer */}
-          <footer className="border-t border-white/10 pt-[2vh]">
-            <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-[2vh]">
+          <footer className="border-t border-white/10 pt-[2vh] bg-[#3d2d2d] -mx-[3vw] px-[3vw] pb-[2vh] mt-[3vh]">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-[2vh]">
               <div 
                 className="text-gray-100"
                 style={{ fontSize: 'clamp(0.75rem, 1vw, 0.875rem)' }}
