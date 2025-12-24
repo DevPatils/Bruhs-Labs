@@ -21,7 +21,7 @@ const ProjectCTA = ({ onClick }) => {
         rel="noopener noreferrer"
         onClick={onClick}
         aria-label="Start Your Project"
-        className="relative z-10 flex items-center justify-center font-semibold text-sm md:text-lg px-6 w-full h-full"
+        className="relative z-10 flex items-center justify-center font-semibold text-sm md:text-lg px-6 w-full h-full transition-all duration-300 ease-out hover:scale-105"
         style={{
           borderRadius: 3733.11,
           background: 'linear-gradient(90deg, rgba(12,10,9,0.85) 0%, #FED408 45%, #C43E3B 100%)',
@@ -30,6 +30,14 @@ const ProjectCTA = ({ onClick }) => {
           boxShadow: '0 10px 30px rgba(0,0,0,0.6), inset 0 6px 18px rgba(255,255,255,0.06)',
           border: '1px solid rgba(255,255,255,0.08)',
           isolation: 'isolate'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 15px 50px rgba(254, 212, 8, 0.4), 0 10px 30px rgba(196, 62, 59, 0.3), inset 0 6px 18px rgba(255,255,255,0.1)';
+          e.currentTarget.style.filter = 'brightness(1.15)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.6), inset 0 6px 18px rgba(255,255,255,0.06)';
+          e.currentTarget.style.filter = 'brightness(1)';
         }}
       >
         {/* persistent outline (keeps hover border visible) */}

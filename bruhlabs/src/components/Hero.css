@@ -1,0 +1,230 @@
+/* Floating glow animations for gradient orbs */
+@keyframes float-glow-left {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.95;
+    }
+
+    25% {
+        transform: translate(20px, -30px) scale(1.05);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-15px, -20px) scale(0.98);
+        opacity: 0.9;
+    }
+
+    75% {
+        transform: translate(10px, 15px) scale(1.02);
+        opacity: 0.95;
+    }
+}
+
+@keyframes float-glow-right {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.9;
+    }
+
+    30% {
+        transform: translate(-25px, 20px) scale(1.08);
+        opacity: 0.95;
+    }
+
+    60% {
+        transform: translate(15px, -25px) scale(0.95);
+        opacity: 0.85;
+    }
+
+    80% {
+        transform: translate(-10px, 10px) scale(1.03);
+        opacity: 0.9;
+    }
+}
+
+/* Floating animations for decorative shapes */
+@keyframes float-shape-1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(15px, -20px) rotate(3deg);
+    }
+
+    50% {
+        transform: translate(-10px, -15px) rotate(-2deg);
+    }
+
+    75% {
+        transform: translate(20px, 10px) rotate(2deg);
+    }
+}
+
+@keyframes float-shape-2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    30% {
+        transform: translate(-20px, 15px) rotate(-3deg);
+    }
+
+    60% {
+        transform: translate(10px, -20px) rotate(2deg);
+    }
+
+    85% {
+        transform: translate(-15px, 5px) rotate(-1deg);
+    }
+}
+
+/* Pulse animation for CTA button enhancement */
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(253, 222, 72, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(253, 222, 72, 0.5);
+    }
+}
+
+/* Floating particle animations */
+@keyframes float-particle-1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(30px, -40px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes float-particle-2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-25px, 35px);
+        opacity: 0.7;
+    }
+}
+
+@keyframes float-particle-3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(40px, 30px);
+        opacity: 0.6;
+    }
+}
+
+@keyframes float-particle-4 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(-35px, -25px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes float-particle-5 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translate(20px, -30px);
+        opacity: 0.7;
+    }
+}
+
+@keyframes float-particle-6 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translate(-30px, 40px);
+        opacity: 0.6;
+    }
+}
+
+/* Animated gradient mesh */
+@keyframes mesh-shift {
+
+    0%,
+    100% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+
+    33% {
+        background-position: 100% 0%, 0% 100%, 30% 70%;
+    }
+
+    66% {
+        background-position: 50% 100%, 50% 0%, 70% 30%;
+    }
+}
+
+/* Sweeping light beam animation */
+@keyframes sweep-horizontal {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.2;
+    }
+
+    50% {
+        top: 50%;
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.2;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
